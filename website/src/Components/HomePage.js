@@ -25,7 +25,11 @@ export default function HomePage() {
             alert("password should include Atleast 1 lowercase, 1 uppercase, 1 digit, 1 symbol and atleast length of 8");
             passwordElement.current.focus();
         }
-        else if (username !== "" && password !== "" && regex.test(password)) {
+        else if ((username !== "" && username !== "admin@gmail.com") || (password !== ""&& password !== "Goutham@43")){
+            alert("Username or password is wrong");
+            usernameElement.current.focus();
+        }
+        else if (username !== "" && username === "admin@gmail.com" && password !== "" && regex.test(password) && password === "Goutham@43") {
             console.log("form submitted")
             navigate('/home');
         }
@@ -36,7 +40,7 @@ export default function HomePage() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-sm-6 col-md-6 text-black mob">
-                            <div className="align-items-center h-custom-2 px-3 ms-xl-4 mt-5 pt-5 pt-xl-0 ">
+                            <div className="align-items-center h-custom-2 px-3 ms-xl-4 mt-5 pt-5 pt-xl-0 custom-d-login">
 
                                 <form style={{ width: '90%' }} className="Main-form" onSubmit={(e) => { HandleSubmit(e) }}>
 
@@ -100,7 +104,7 @@ export default function HomePage() {
                             </div>
 
                         </div>
-                        <div className="col-sm-6 px-0 d-none d-sm-block col-md-6">
+                        <div className="col-sm-6 px-0 d-none d-sm-block col-md-6 custom-display">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
                                 className="img" alt="Sampleimage" />
                         </div>
@@ -110,3 +114,4 @@ export default function HomePage() {
         </>
     )
 }
+

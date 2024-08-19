@@ -348,3 +348,17 @@ img.d-block {
     transform: rotate(360deg);
   }
 }
+
+section.vh-88 {
+  width: 100%;
+}
+
+@media (min-width: 575px) and (max-width: 992px) {
+  div.custom-display {
+    display: none !important;
+  }
+  div.custom-d-login{
+    width: 400px;
+    margin-left: 20%;
+  }
+}
